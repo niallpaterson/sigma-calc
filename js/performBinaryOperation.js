@@ -5,4 +5,4 @@ const performBinaryOperation = {
   '÷': (leftOperand, rightOperand) => leftOperand / rightOperand,
 };
 
-export { performBinaryOperation as default };
+export default performBinaryOperation;
