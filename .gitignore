@@ -1,6 +1,13 @@
 
-# Created by https://www.toptal.com/developers/gitignore/api/macos,node,sass
-# Edit at https://www.toptal.com/developers/gitignore?templates=macos,node,sass
+# Created by https://www.toptal.com/developers/gitignore/api/node,sass,code,macos
+# Edit at https://www.toptal.com/developers/gitignore?templates=node,sass,code,macos
+
+### Code ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 
 ### macOS ###
 # General
@@ -122,4 +129,4 @@ typings/
 *.sass.map
 *.scss.map
 
-# End of https://www.toptal.com/developers/gitignore/api/macos,node,sass
+# End of https://www.toptal.com/developers/gitignore/api/node,sass,code,macos
