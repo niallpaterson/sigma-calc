@@ -1,49 +1,46 @@
 import performBinaryOperation from '../../js/performBinaryOperation';
 
-describe('operators output numbers', () => {
+describe('performs simple binary operation correctly', () => {
   test('addition', () => {
-    expect(typeof performBinaryOperation['+'](2, 6)).toBe('number');
-    expect(typeof performBinaryOperation['+'](20, 30)).toBe('number');
-    expect(typeof performBinaryOperation['+'](21.5, 23.2)).toBe('number');
-    expect(typeof performBinaryOperation['+'](0, 0)).toBe('number');
+    expect(performBinaryOperation([2, '+', 2], 1)).toEqual([4]);
   });
   test('subtraction', () => {
-    expect(typeof performBinaryOperation['−'](2, 6)).toBe('number');
-    expect(typeof performBinaryOperation['−'](20, 30)).toBe('number');
-    expect(typeof performBinaryOperation['−'](21.5, 23.2)).toBe('number');
-    expect(typeof performBinaryOperation['−'](0, 0)).toBe('number');
+    expect(performBinaryOperation([2, '−', 2], 1)).toEqual([0]);
   });
   test('multiplication', () => {
-    expect(typeof performBinaryOperation['×'](2, 6)).toBe('number');
-    expect(typeof performBinaryOperation['×'](20, 30)).toBe('number');
-    expect(typeof performBinaryOperation['×'](21.5, 23.2)).toBe('number');
-    expect(typeof performBinaryOperation['×'](0, 0)).toBe('number');
+    expect(performBinaryOperation([2, '×', 2], 1)).toEqual([4]);
   });
   test('division', () => {
-    expect(typeof performBinaryOperation['÷'](2, 6)).toBe('number');
-    expect(typeof performBinaryOperation['÷'](20, 30)).toBe('number');
-    expect(typeof performBinaryOperation['÷'](20, 30)).toBe('number');
-    expect(typeof performBinaryOperation['÷'](0, 0)).toBe('number');
+    expect(performBinaryOperation([2, '÷', 2], 1)).toEqual([1]);
   });
 });
 
-describe('operators output correct values', () => {
+describe('trims outer brackets', () => {
   test('addition', () => {
-    expect(performBinaryOperation['+'](7, 1)).toBe(8);
-    expect(performBinaryOperation['+'](40, 23)).toBe(63);
-    expect(performBinaryOperation['+'](37.4, 22.5)).toBe(59.9);
-    expect(performBinaryOperation['+'](0, 0)).toBe(0);
+    expect(performBinaryOperation(['(', 2, '+', 2, ')'], 2)).toEqual([4]);
   });
   test('subtraction', () => {
-    expect(performBinaryOperation['−'](7, 1)).toBe(6);
-    expect(performBinaryOperation['−'](40, 23)).toBe(17);
-    expect(performBinaryOperation['−'](37.6, 22.5)).toBe(15.1);
-    expect(performBinaryOperation['−'](0, 0)).toBe(0);
+    expect(performBinaryOperation(['(', 2, '−', 2, ')'], 2)).toEqual([0]);
   });
   test('multiplication', () => {
-    expect(performBinaryOperation['×'](9, 6)).toBe(54);
+    expect(performBinaryOperation(['(', 2, '×', 2, ')'], 2)).toEqual([4]);
   });
   test('division', () => {
-    expect(performBinaryOperation['÷'](200, 4)).toBe(50);
+    expect(performBinaryOperation(['(', 2, '÷', 2, ')'], 2)).toEqual([1]);
+  });
+});
+
+describe('only performs narrowest scope binary operation', () => {
+  test('addition', () => {
+    expect(performBinaryOperation(['(', '(', 2, '+', 2, ')', '-', 2, ')'], 3)).toEqual(['(', 4, '-', 2, ')']);
+  });
+  test('subtraction', () => {
+    expect(performBinaryOperation(['(', '(', 2, '−', 2, ')', '×', 2, ')'], 3)).toEqual(['(', 0, '×', 2, ')']);
+  });
+  test('multiplication', () => {
+    expect(performBinaryOperation(['(', '(', 2, '×', 2, ')', '÷', 2, ')'], 3)).toEqual(['(', 4, '÷', 2, ')']);
+  });
+  test('division', () => {
+    expect(performBinaryOperation(['(', '(', 2, '÷', 2, ')', '+', 2, ')'], 3)).toEqual(['(', 1, '+', 2, ')']);
   });
 });
