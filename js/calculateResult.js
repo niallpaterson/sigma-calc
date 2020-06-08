@@ -8,7 +8,7 @@ const calculateResult = (formula) => {
     const removedUnaries = applyUnarySubtraction(formula);
     if (removedUnaries.some((symbol) => isBinaryOperator(symbol))) {
       const widestOperatorIndex = getIndexOfWidestScopeBinaryOperator(removedUnaries);
-      return calculateResult(performBinaryOperation(formula, widestOperatorIndex));
+      return calculateResult(performBinaryOperation(removedUnaries, widestOperatorIndex));
     } return removedUnaries;
   }
   return formula[0];
