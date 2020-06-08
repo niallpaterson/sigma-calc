@@ -1,5 +1,4 @@
 const parseInputStringNumerals = (formula) => {
-  console.log(formula);
   const joinedStrings = [...formula];
   joinedStrings.forEach((symbol, symbolIndex) => {
     if (Number(symbol) || symbol === '.') {
@@ -9,7 +8,6 @@ const parseInputStringNumerals = (formula) => {
       }
     }
   });
-  console.log(joinedStrings);
   return joinedStrings.map((symbol) => (Number(symbol) || Number(symbol) === 0 ? Number(symbol) : symbol));
 };
 
