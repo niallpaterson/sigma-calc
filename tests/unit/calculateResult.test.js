@@ -4,6 +4,9 @@ describe('correctly returns formula sum', () => {
   test('no brackets, addition', () => {
     expect(calculateResult([2, '+', 2])).toEqual(4);
   });
+  test('no brackets, addition, with negative', () => {
+    expect(calculateResult([2, '+', -2])).toEqual(0);
+  });
   test('no brackets, subtraction', () => {
     expect(calculateResult([2, '−', 2])).toEqual(0);
   });

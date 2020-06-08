@@ -1,18 +1,18 @@
 const applyUnarySubtraction = (formula) => {
-  let indexesOfUsedSubstractions = [];
+  const indexesOfUsedSubtractions = [];
   return formula.map((symbol, symbolIndex) => {
     // negate any negative numbers
     if (formula[symbolIndex - 1] === '−'
       && typeof formula[symbolIndex - 2] !== 'number'
       && formula[symbolIndex - 2] !== ')'
       && typeof symbol === 'number') {
-      indexesOfUsedSubstractions.push(symbolIndex - 1);
+      indexesOfUsedSubtractions.push(symbolIndex - 1);
       return symbol * -1;
     }
     return symbol;
   }).filter((symbol, symbolIndex) => {
     // remove remanining negation symbol
-    return !(indexesOfUsedSubstractions.includes(symbolIndex));
+    return !(indexesOfUsedSubtractions.includes(symbolIndex));
   });
 };
 
