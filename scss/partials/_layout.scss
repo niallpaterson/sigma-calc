@@ -9,7 +9,6 @@ body {
 
 h1 {
   padding: 25px;
-  font-weight: 200;
 }
 
 #buttons {
@@ -30,5 +29,8 @@ h1 {
     border-radius: 5px;
     height: 65px;
     width: 500px;
+    text-align: right;
+    line-height: 65px;
+    padding-right: 25px;
   }
 };
