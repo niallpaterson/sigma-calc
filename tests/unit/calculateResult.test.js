@@ -41,3 +41,27 @@ describe('correctly returns formula sum', () => {
     expect(calculateResult(['(', 2, '×', '(', 2, '×', 2, ')', ')'])).toEqual(8);
   });
 });
+
+describe('correctly throws errors for invalid inputs', () => {
+  test('operator surplus', () => {
+    expect(calculateResult([2, '+', '÷', 2])).toBeNaN();
+    expect(calculateResult([2, '×', '÷', 2])).toBeNaN();
+    expect(calculateResult([2, '−', '÷', 2])).toBeNaN();
+    expect(calculateResult([2, '+', '−', '÷', 2])).toBeNaN();
+    expect(calculateResult([2, '+', '÷', '−', 2])).toBeNaN();
+    expect(calculateResult([2, '+', '÷', 2, '÷'])).toBeNaN();
+  });
+  test('incorrectly placed brackets', () => {
+    expect(calculateResult([2, '+', '(', 2])).toBeNaN();
+    expect(calculateResult([2, ')', '÷', 2])).toBeNaN();
+    expect(calculateResult(['(', '(', 2, '−', '÷', 2])).toBeNaN();
+    expect(calculateResult([2, '+', '−', '÷', 2, ')', ')'])).toBeNaN();
+    expect(calculateResult([2, '+', ')', 2])).toBeNaN();
+    expect(calculateResult([2, '(', ')', 2])).toBeNaN();
+    expect(calculateResult(['(', '(', 2, '−', '÷', 2])).toBeNaN();
+    expect(calculateResult([2, '+', '−', '÷', 2, ')', ')'])).toBeNaN();
+    expect(calculateResult([2, '+', ')', 2])).toBeNaN();
+    expect(calculateResult([2, '(', 5, ')', 2])).toBeNaN();
+    expect(calculateResult([')', 5, '+', 2, '('])).toBeNaN();
+  });
+});
