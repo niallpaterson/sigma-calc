@@ -1,5 +1,5 @@
-import isBinaryOperator from './isBinaryOperator';
-import countScopingBrackets from './countScopingBrackets';
+import isBinaryOperator from './isBinaryOperator.js';
+import countScopingBrackets from './countScopingBrackets.js';
 
 // The widest scope operator is that with the most scoping brackets
 // E.g., for [ (x + y) - z ] the widest scope operator is '+'

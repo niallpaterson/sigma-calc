@@ -1,4 +1,4 @@
-import binaryOperators from './binaryOperators';
+import binaryOperators from './binaryOperators.js';
 
 const performBinaryOperation = (formula, widestOperatorIndex) => {
   // perform binary operation
