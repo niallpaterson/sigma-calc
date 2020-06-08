@@ -7,13 +7,13 @@ describe('returns correct number of scoping brackets', () => {
   test('outer brackets only', () => {
     expect(countScopingBrackets(['(', 2, '+', 2, ')'], 1)).toBe(2);
   });
-  test('right nested brackets, widest operator', () => {
+  test('right nested brackets, narrowest operator', () => {
     expect(countScopingBrackets(['(', '(', 2, '+', 2, ')', '-', 2, ')'], 2)).toBe(4);
   });
   test('right nested brackets, shallowest operator', () => {
     expect(countScopingBrackets(['(', '(', 2, '+', 2, ')', '-', 2, ')'], 6)).toBe(3);
   });
-  test('left nested brackets, widest operator', () => {
+  test('left nested brackets, narrowest operator', () => {
     expect(countScopingBrackets(['(', 2, '+', '(', 2, '-', 2, ')', ')'], 2)).toBe(3);
   });
   test('left nested brackets, shallowest operator', () => {
