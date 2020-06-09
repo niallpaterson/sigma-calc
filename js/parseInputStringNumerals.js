@@ -1,6 +1,5 @@
 import joinMultiDigitNumerals from './joinMultiDigitNumerals.js';
 
-
 const parseInputStringNumerals = (formula) => {
   let joinedNumerals = null;
   formula.forEach((symbol, index) => {
