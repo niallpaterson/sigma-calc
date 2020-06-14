@@ -11,7 +11,7 @@ const calculateResult = (formula) => {
       return calculateResult(performBinaryOperation(removedUnaries, narrowestOperatorIndex));
     } return removedUnaries;
   }
-  // passing output throgugh Number() catches various syntax errors
+  // passing output through Number() catches various syntax errors
   // e.g., when output includes 'undefined'
   return Number(formula[0]);
 };
