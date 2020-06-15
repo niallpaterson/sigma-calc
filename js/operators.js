@@ -4,7 +4,7 @@ const operators = {
   '×': (leftOperand, rightOperand) => leftOperand * rightOperand,
   '÷': (leftOperand, rightOperand) => leftOperand / rightOperand,
   '∗∗': (leftOperand, rightOperand) => leftOperand ** rightOperand,
-  '√': (operand) => Math.sqrt(operand),
+  '√': (rightOperand) => Math.sqrt(rightOperand),
 };
 
 export default operators;
