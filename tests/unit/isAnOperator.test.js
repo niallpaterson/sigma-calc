@@ -16,6 +16,12 @@ describe('returns true for binary operators', () => {
   test('returns true for multiplication', () => {
     expect(isAnOperator('×')).toBe(true);
   });
+  test('returns true for exponentation', () => {
+    expect(isAnOperator('∗∗')).toBe(true);
+  });
+  test('returns true for square root', () => {
+    expect(isAnOperator('√')).toBe(true);
+  });
 });
 
 describe('returns false for non binary operators', () => {
