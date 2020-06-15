@@ -1,9 +1,10 @@
-const binaryOperators = {
+const operators = {
   '+': (leftOperand, rightOperand) => leftOperand + rightOperand,
   '−': (leftOperand, rightOperand) => leftOperand - rightOperand,
   '×': (leftOperand, rightOperand) => leftOperand * rightOperand,
   '÷': (leftOperand, rightOperand) => leftOperand / rightOperand,
   '∗∗': (leftOperand, rightOperand) => leftOperand ** rightOperand,
+  '√': (operand) => Math.sqrt(operand),
 };
 
-export default binaryOperators;
+export default operators;
