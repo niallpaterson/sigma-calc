@@ -1,3 +1,3 @@
-const isAnOperator = (symbol) => symbol === '+' || symbol === '−' || symbol === '×' || symbol === '÷' || symbol === '√';
+const isAnOperator = (symbol) => symbol === '+' || symbol === '−' || symbol === '×' || symbol === '÷' || symbol === '√' || symbol === '∗∗';
 
 export default isAnOperator;
