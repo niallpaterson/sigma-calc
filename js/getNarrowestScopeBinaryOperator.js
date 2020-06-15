@@ -1,4 +1,4 @@
-import isBinaryOperator from './isBinaryOperator.js';
+import isAnOperator from './isAnOperator.js';
 import countScopingBrackets from './countScopingBrackets.js';
 
 // The narrowest scope operator is that with the most scoping brackets
@@ -6,7 +6,7 @@ import countScopingBrackets from './countScopingBrackets.js';
 
 const getIndexOfnarrowestScopeBinaryOperator = (formula) => {
   return formula.reduce((narrowestScopeIndex, symbol, indexOfSymbol) => {
-    if (isBinaryOperator(symbol)
+    if (isAnOperator(symbol)
       && countScopingBrackets(formula, indexOfSymbol)
       >= countScopingBrackets(formula, narrowestScopeIndex)) {
       return indexOfSymbol;
