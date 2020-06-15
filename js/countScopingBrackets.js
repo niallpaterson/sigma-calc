@@ -2,10 +2,10 @@
 // 1. a right bracket to the right of O,
 // 2. a left bracket to the left of O.
 
-const countScopingBrackets = (formula, indexOfBinaryOperator) => {
+const countScopingBrackets = (formula, indexOfOperator) => {
   return formula.reduce((numberOfScopingBrackets, symbol, indexOfsymbol) => {
-    if ((symbol === '(' && indexOfsymbol < indexOfBinaryOperator)
-      || (symbol === ')' && indexOfsymbol > indexOfBinaryOperator)) {
+    if ((symbol === '(' && indexOfsymbol < indexOfOperator)
+      || (symbol === ')' && indexOfsymbol > indexOfOperator)) {
       return numberOfScopingBrackets + 1;
     }
     return numberOfScopingBrackets;
