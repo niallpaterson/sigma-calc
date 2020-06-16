@@ -1,5 +1,6 @@
 import elements from './elements.js';
 import calculateResult from './calculateResult.js';
+import joinMultiDigitNumerals from './joinMultiDigitNumerals.js';
 import parseInputStringNumerals from './parseInputStringNumerals.js';
 
 const addEventListeners = {
@@ -35,10 +36,11 @@ const addEventListeners = {
   },
   toEquals() {
     elements.equals.addEventListener('click', () => {
-      const parsedInput = parseInputStringNumerals(
+      const multiDigitNumeralStringsJoined = joinMultiDigitNumerals(
         elements.formulaInput.textContent.split('')
       );
-      elements.formulaInput.textContent = calculateResult(parsedInput);
+      const parsedFormula = parseInputStringNumerals(multiDigitNumeralStringsJoined);
+      elements.formulaInput.textContent = calculateResult(parsedFormula);
     });
     return this;
   },
