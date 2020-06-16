@@ -1,9 +1,10 @@
 import operators from './operators.js';
 
-const performOperations = (formula, narrowestOperatorIndex) => {
-  // perform binary operation
+const performOperation = (formula, narrowestOperatorIndex) => {
+  // perform operation
   return formula.map((symbol, symbolIndex) => {
-    if (symbolIndex === narrowestOperatorIndex) {
+    if (symbolIndex === narrowestOperatorIndex
+      && (operators[formula[narrowestOperatorIndex]])) { // handles invalid formulae
       return operators[formula[narrowestOperatorIndex]](
         formula[narrowestOperatorIndex - 1], formula[narrowestOperatorIndex + 1]
       );
@@ -19,4 +20,4 @@ const performOperations = (formula, narrowestOperatorIndex) => {
   });
 };
 
-export default performOperations;
+export default performOperation;
