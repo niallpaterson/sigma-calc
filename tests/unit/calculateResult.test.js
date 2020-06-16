@@ -42,6 +42,17 @@ describe('correctly returns formula sum', () => {
   });
 });
 
+describe('correctly handles bodmas formulae', () => {
+  test('multiple instances of same operator', () => {
+    expect(calculateResult([2, '×', 2, '×', 2, '×', 2])).toBe(16);
+  });
+  test('single instances of different operators', () => {
+    expect(calculateResult([2, '×', 2, '×', 2, '−', 1])).toBe(7);
+    expect(calculateResult(['√', 8, '×', 2])).toBe(4);
+  });
+});
+
+
 describe('correctly throws errors for invalid inputs', () => {
   test('operator surplus', () => {
     expect(calculateResult([2, '+', '÷', 2])).toBeNaN();
