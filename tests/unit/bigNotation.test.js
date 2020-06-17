@@ -55,3 +55,27 @@ describe('sigma notation: correctly throws errors for invalid inputs', () => {
     expect(bigNotation.sigma([')', 5, '+', 2, '('], 1, 2)).toBeNaN();
   });
 });
+
+describe('pi notation: correctly throws errors for invalid inputs', () => {
+  test('operator surplus', () => {
+    expect(bigNotation.pi([2, '+', '÷', 2], 1, 2)).toBeNaN();
+    expect(bigNotation.pi([2, '×', '÷', 2], 1, 2)).toBeNaN();
+    expect(bigNotation.pi([2, '−', '÷', 2], 1, 2)).toBeNaN();
+    expect(bigNotation.pi([2, '+', '−', '÷', 2], 1, 2)).toBeNaN();
+    expect(bigNotation.pi([2, '+', '÷', '−', 2], 1, 2)).toBeNaN();
+    expect(bigNotation.pi([2, '+', '÷', 2, '÷'], 1, 2)).toBeNaN();
+  });
+  test('incorrectly placed brackets', () => {
+    expect(bigNotation.pi([2, '+', '(', 2], 1, 2)).toBeNaN();
+    expect(bigNotation.pi([2, ')', '÷', 2], 1, 2)).toBeNaN();
+    expect(bigNotation.pi(['(', '(', 2, '−', '÷', 2], 1, 2)).toBeNaN();
+    expect(bigNotation.pi([2, '+', '−', '÷', 2, ')', ')'], 1, 2)).toBeNaN();
+    expect(bigNotation.pi([2, '+', ')', 2], 1, 2)).toBeNaN();
+    expect(bigNotation.pi([2, '(', ')', 2], 1, 2)).toBeNaN();
+    expect(bigNotation.pi(['(', '(', 2, '−', '÷', 2], 1, 2)).toBeNaN();
+    expect(bigNotation.pi([2, '+', '−', '÷', 2, ')', ')'], 1, 2)).toBeNaN();
+    expect(bigNotation.pi([2, '+', ')', 2], 1, 2)).toBeNaN();
+    expect(bigNotation.pi([2, '(', 5, ')', 2], 1, 2)).toBeNaN();
+    expect(bigNotation.pi([')', 5, '+', 2, '('], 1, 2)).toBeNaN();
+  });
+});
