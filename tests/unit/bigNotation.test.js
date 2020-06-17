@@ -31,3 +31,27 @@ describe('sigma notation: correctly returns formula sum', () => {
     });
   });
 });
+
+describe('sigma notation: correctly throws errors for invalid inputs', () => {
+  test('operator surplus', () => {
+    expect(bigNotation.sigma([2, '+', '÷', 2], 1, 2)).toBeNaN();
+    expect(bigNotation.sigma([2, '×', '÷', 2], 1, 2)).toBeNaN();
+    expect(bigNotation.sigma([2, '−', '÷', 2], 1, 2)).toBeNaN();
+    expect(bigNotation.sigma([2, '+', '−', '÷', 2], 1, 2)).toBeNaN();
+    expect(bigNotation.sigma([2, '+', '÷', '−', 2], 1, 2)).toBeNaN();
+    expect(bigNotation.sigma([2, '+', '÷', 2, '÷'], 1, 2)).toBeNaN();
+  });
+  test('incorrectly placed brackets', () => {
+    expect(bigNotation.sigma([2, '+', '(', 2], 1, 2)).toBeNaN();
+    expect(bigNotation.sigma([2, ')', '÷', 2], 1, 2)).toBeNaN();
+    expect(bigNotation.sigma(['(', '(', 2, '−', '÷', 2], 1, 2)).toBeNaN();
+    expect(bigNotation.sigma([2, '+', '−', '÷', 2, ')', ')'], 1, 2)).toBeNaN();
+    expect(bigNotation.sigma([2, '+', ')', 2], 1, 2)).toBeNaN();
+    expect(bigNotation.sigma([2, '(', ')', 2], 1, 2)).toBeNaN();
+    expect(bigNotation.sigma(['(', '(', 2, '−', '÷', 2], 1, 2)).toBeNaN();
+    expect(bigNotation.sigma([2, '+', '−', '÷', 2, ')', ')'], 1, 2)).toBeNaN();
+    expect(bigNotation.sigma([2, '+', ')', 2], 1, 2)).toBeNaN();
+    expect(bigNotation.sigma([2, '(', 5, ')', 2], 1, 2)).toBeNaN();
+    expect(bigNotation.sigma([')', 5, '+', 2, '('], 1, 2)).toBeNaN();
+  });
+});
