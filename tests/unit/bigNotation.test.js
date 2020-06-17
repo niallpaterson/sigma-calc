@@ -11,8 +11,17 @@ describe('sigma notation: correctly returns formula sum', () => {
     test('no brackets, addition, iterations: 1-3', () => {
       expect(bigNotation.sigma([2, '+', 2], 1, 3)).toEqual(12);
     });
-    test('no brackets, addition, with negative', () => {
+    test('no brackets, addition, with negative, iterations: 1-2', () => {
       expect(bigNotation.sigma([1, '+', -2], 1, 2)).toEqual(-2);
+    });
+    test('brackets, addition, iteration 1-2', () => {
+      expect(bigNotation.sigma(['(', 2, '+', 2, ')'], 1, 2)).toEqual(8);
+    });
+    test('right nested brackets, addition, iteration 1-2', () => {
+      expect(bigNotation.sigma(['(', 2, '+', '(', 2, '+', 2, ')', ')'], 1, 2)).toEqual(12);
+    });
+    test('left nested brackets, addition, iteration 1-2', () => {
+      expect(bigNotation.sigma(['(', 2, '+', 2, ')', '+', 2, ')'], 1, 2)).toEqual(12);
     });
   });
 
@@ -28,6 +37,15 @@ describe('sigma notation: correctly returns formula sum', () => {
     });
     test('no brackets, addition, with negative', () => {
       expect(bigNotation.sigma([-2, '+', 'i'], 1, 2)).toEqual(-1);
+    });
+    test('brackets, addition, iteration 1-2', () => {
+      expect(bigNotation.sigma(['(', 'i', '+', 2, ')'], 1, 2)).toEqual(7);
+    });
+    test('right nested brackets, addition, iteration 1-2', () => {
+      expect(bigNotation.sigma(['(', 'i', '+', '(', 2, '+', 2, ')', ')'], 1, 2)).toEqual(11);
+    });
+    test('left nested brackets, addition, iteration 1-2', () => {
+      expect(bigNotation.sigma(['(', 'i', '+', 2, ')', '+', 2, ')'], 1, 2)).toEqual(11);
     });
   });
 });
@@ -53,6 +71,38 @@ describe('sigma notation: correctly throws errors for invalid inputs', () => {
     expect(bigNotation.sigma([2, '+', ')', 2], 1, 2)).toBeNaN();
     expect(bigNotation.sigma([2, '(', 5, ')', 2], 1, 2)).toBeNaN();
     expect(bigNotation.sigma([')', 5, '+', 2, '('], 1, 2)).toBeNaN();
+  });
+});
+
+describe('pi notation: correctly returns formula sum', () => {
+  describe('without i values', () => {
+    test('no brackets, addition, iterations: 1-2', () => {
+      expect(bigNotation.pi([2, '+', 2], 1, 2)).toEqual(16);
+    });
+    test('no brackets, addition, iterations: 2-3', () => {
+      expect(bigNotation.pi([2, '+', 2], 2, 3)).toEqual(16);
+    });
+    test('no brackets, addition, iterations: 1-3', () => {
+      expect(bigNotation.pi([2, '+', 2], 1, 3)).toEqual(64);
+    });
+    test('no brackets, addition, with negative', () => {
+      expect(bigNotation.pi([1, '+', -2], 1, 2)).toEqual(1);
+    });
+  });
+
+  describe('with i values', () => {
+    test('no brackets, addition, iterations: 1-2', () => {
+      expect(bigNotation.pi([2, '+', 'i'], 1, 2)).toEqual(12);
+    });
+    test('no brackets, addition, iterations: 2-3', () => {
+      expect(bigNotation.pi([2, '+', 'i'], 2, 3)).toEqual(20);
+    });
+    test('no brackets, addition, iterations: 1-3', () => {
+      expect(bigNotation.pi([2, '+', 'i'], 1, 3)).toEqual(60);
+    });
+    test('no brackets, addition, with negative', () => {
+      expect(bigNotation.pi([-2, '+', 'i'], 1, 2)).toEqual(0);
+    });
   });
 });
 
