@@ -21,6 +21,9 @@ const calculateResult = (formula) => {
     }
   }
 
+  // handles diff between -0 and 0
+  if (Object.is(formula[0], -0)) { formula[0] = 0; };
+
   if (outputIsValidNumber((formula))) { return formula[0]; }
 
   return NaN;
