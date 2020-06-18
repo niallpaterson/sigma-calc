@@ -6,7 +6,7 @@ const elements = {
   lowerLimit: document.querySelector('.lower-limit'),
   numerals: document.querySelectorAll('.numeral'),
   operators: document.querySelectorAll('.operator'),
-  bigOperators: document.querySelectorAll('bigOperator'),
+  bigOperators: document.querySelectorAll('.big-operator'),
   brackets: document.querySelectorAll('.bracket'),
   ACdelete: document.querySelector('#AC-btn'),
   delete: document.querySelector('#del-btn'),
