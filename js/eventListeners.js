@@ -2,12 +2,14 @@ import elements from './elements.js';
 import calculateResult from './calculateResult.js';
 import joinMultiDigitNumerals from './joinMultiDigitNumerals.js';
 import parseInputStringNumerals from './parseInputStringNumerals.js';
+import bigNotation from './bigNotation.js';
+
 
 const addEventListeners = {
   toNumeralBtns() {
     elements.numerals.forEach((button) => {
       button.addEventListener('click', () => {
-        elements.formulaInput.textContent += button.textContent;
+        elements.formulaInput.value += button.textContent;
       });
     });
     return this;
@@ -15,7 +17,16 @@ const addEventListeners = {
   toOperatorBtns() {
     elements.operators.forEach((button) => {
       button.addEventListener('click', () => {
-        elements.formulaInput.textContent += button.textContent;
+        elements.formulaInput.value += button.textContent;
+      });
+    });
+    return this;
+  },
+  toBigOperatorBtns() {
+    elements.bigOperators.forEach((button) => {
+      button.addEventListener('click', () => {
+        bigNotation.activeBigOperator = button.textContent;
+        elements.activeBigOperator.value += button.textContent;
       });
     });
     return this;
@@ -23,14 +34,14 @@ const addEventListeners = {
   toBrackets() {
     elements.brackets.forEach((button) => {
       button.addEventListener('click', () => {
-        elements.formulaInput.textContent += button.textContent;
+        elements.formulaInput.value += button.textContent;
       });
     });
     return this;
   },
   toPeriod() {
     elements.period.addEventListener('click', () => {
-      elements.formulaInput.textContent += '.';
+      elements.formulaInput.value += '.';
     });
     return this;
   },
@@ -40,19 +51,19 @@ const addEventListeners = {
         elements.formulaInput.textContent.split('')
       );
       const parsedFormula = parseInputStringNumerals(multiDigitNumeralStringsJoined);
-      elements.formulaInput.textContent = calculateResult(parsedFormula);
+      elements.formulaInput.value = calculateResult(parsedFormula);
     });
     return this;
   },
   toACdelete() {
     elements.ACdelete.addEventListener('click', () => {
-      elements.formulaInput.textContent = '';
+      elements.formulaInput.value = '';
     });
     return this;
   },
   toDelete() {
     elements.delete.addEventListener('click', () => {
-      elements.formulaInput.textContent = elements.formulaInput.textContent.slice(0, -1);
+      elements.formulaInput.value = elements.formulaInput.value.slice(0, -1);
     });
     return this;
   },
