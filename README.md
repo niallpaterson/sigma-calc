@@ -1,6 +1,6 @@
 # sigma-calc
 
-A simple calculator app written in JavaScript that allows users to perform calculations in [sigma](https://en.wikipedia.org/wiki/Summation#Capital-sigma_notation) and [pi](https://en.wikipedia.org/wiki/Product_(mathematics)#:~:text=Product%20of%20sequences,is%20just%20that%20number%20itself) notation.
+A simple calculator app written in JavaScript that allows users to perform calculations in [sigma](https://en.wikipedia.org/wiki/Summation#Capital-sigma_notation) and [pi](https://en.wikipedia.org/wiki/Product_(mathematics)#:~:text=Product%20of%20sequences,is%20just%20that%20number%20itself) notation. Handles conventional order of operations (BODMAS). 
 
 ## Usage
 
