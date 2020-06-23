@@ -36,7 +36,7 @@ h1 {
   width: 70px;
 }
 
-#buttons .formula-input {
+#buttons .formula-wrapper {
   -ms-grid-column: 1;
   -ms-grid-column-span: 6;
   grid-column: 1 / span 6;
@@ -47,6 +47,45 @@ h1 {
   text-align: right;
   line-height: 65px;
   padding-right: 25px;
+}
+
+#buttons .formula-input {
+  position: relative;
+  height: 40px;
+  float: right;
+  width: 80%;
+  top: 12.5px;
+  text-align: right;
+}
+
+#buttons #big-operator-input {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  left: 5px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 65px;
+  width: 50px;
+}
+
+#buttons #big-operator-input #active-big-operator {
+  position: relative;
+  top: 0;
+  margin: 0;
+  line-height: 25px;
+  text-align: center;
+  height: 25px;
+}
+
+#buttons #big-operator-input input {
+  height: 18px;
+  border-radius: 5px;
+  line-height: 18px;
+  text-align: center;
 }
 
 * {
@@ -77,7 +116,16 @@ h1 {
   font-size: 40px;
 }
 
-.formula-input {
+input {
+  text-align: center;
+  font-size: 12px;
+}
+
+#active-big-operator {
+  font-size: 30px;
+}
+
+.formula-wrapper {
   letter-spacing: 0.05em;
   font-size: 30px;
 }
