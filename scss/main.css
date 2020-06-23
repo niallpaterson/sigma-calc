@@ -20,6 +20,12 @@ h1 {
   padding: 25px;
 }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 #buttons {
   width: 500px;
   display: -ms-grid;
@@ -81,11 +87,35 @@ h1 {
   height: 25px;
 }
 
-#buttons #big-operator-input input {
+#buttons #big-operator-input .limit-wrapper {
   height: 18px;
+  width: 60px;
   border-radius: 5px;
-  line-height: 18px;
-  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#buttons #big-operator-input .limit-wrapper input {
+  border: 1px solid grey;
+  border-radius: 2.5px;
+  height: 10px;
+  width: 15px;
+  padding: 0 2px;
+}
+
+#buttons #big-operator-input .limit-wrapper input:hover {
+  cursor: pointer;
+}
+
+#buttons #big-operator-input .limit-wrapper label {
+  margin-left: 10px;
 }
 
 * {
@@ -103,6 +133,10 @@ h1 {
   background-color: #479CB9;
 }
 
+#i-btn {
+  background-color: #e593db;
+}
+
 #equals {
   background-color: #6B9287;
 }
@@ -116,17 +150,18 @@ h1 {
   font-size: 40px;
 }
 
-input {
+.limit-wrapper label, .limit-wrapper input {
   text-align: center;
-  font-size: 12px;
-}
-
-#active-big-operator {
-  font-size: 30px;
+  font-size: 8px;
 }
 
 .formula-wrapper {
   letter-spacing: 0.05em;
   font-size: 30px;
+}
+
+.formula-wrapper #active-big-operator {
+  font-size: 30px;
+  letter-spacing: 0.025em;
 }
 /*# sourceMappingURL=main.css.map */
