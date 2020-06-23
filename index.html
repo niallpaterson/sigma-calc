@@ -14,18 +14,30 @@
   </header>
   <main>
 
-    
-
     <article id='buttons'>
-      <span class="formula-input"></span>
+      <div class="formula-wrapper">
+        <input class="formula-input"></input>
+        <div id="big-operator-input">
+          <div class="limit-wrapper">
+            <label for="upper-limit">n=</label>
+            <input type='number' id='upper-limit' min='1' value='1'>
+          </div>
+          <p id="active-big-operator">Σ</p>
+          <div class="limit-wrapper">
+            <label for="lower-limit">i=</label>
+            <input type='number' id='lower-limit' min='1' value='1'>
+          </div>
+        </div>
+        <div id="sum-input"></div>
+      </div>
 
       <button id='Σ-btn' class='big-operator'>Σ</button>
       <button id='Π-btn' class='big-operator'>Π</button>
 
       <button id='(-btn' class='bracket'>(</button>
       <button id=')-btn' class='bracket'>)</button>
+      <button id='i-btn' class='numeral'>i</button>
 
-      <button id='del-btn' class="delete">del</button>
       <button id='AC-btn' class="delete">AC</button>
 
       <button id='1-btn' class="numeral">1</button>
@@ -34,7 +46,7 @@
 
       <button id='+-btn' class='operator'>+</button>
       <button id='÷-btn' class='operator'>÷</button>
-      <button id='xⁿ-btn' class='operator'>xⁿ</button>
+      <button id='**-btn' class='operator'>∗∗</button>
 
       <button id='4-btn' class="numeral">4</button>
       <button id='5-btn' class="numeral">5</button>

@@ -11,6 +11,14 @@ h1 {
   padding: 25px;
 }
 
+// turn off input arrows
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
 #buttons {
   width: 500px;
   display: grid;
@@ -23,7 +31,7 @@ h1 {
     height: 40px;
     width: 70px;
   }
-  .formula-input {
+  .formula-wrapper {
     grid-column: 1 / span 6;
     border: 1px solid grey; 
     border-radius: 5px;
@@ -33,4 +41,51 @@ h1 {
     line-height: 65px;
     padding-right: 25px;
   }
+  .formula-input {
+   position: relative;
+   height: 40px;
+   float: right;
+   width: 80%;
+   top: 12.5px;
+   text-align: right;
+  }
+  #big-operator-input {
+    position: relative;
+    display: flex;
+    left: 5px;
+    flex-direction: column;
+    height: 65px;
+    width: 50px;
+    #active-big-operator {
+      position: relative;
+      top: 0;
+      margin: 0;
+      line-height: 25px;
+      text-align: center;
+      height: 25px;
+    }
+    .limit-wrapper {
+      height: 18px;
+      width: 60px;
+      border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      input {
+        border: 1px solid grey;
+        border-radius: 2.5px;
+        height: 10px;
+        width: 15px;
+        padding: 0 2px;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      label {
+        margin-left: 10px;
+      }
+    }
+  }
+  
 };

@@ -20,6 +20,12 @@ h1 {
   padding: 25px;
 }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 #buttons {
   width: 500px;
   display: -ms-grid;
@@ -36,7 +42,7 @@ h1 {
   width: 70px;
 }
 
-#buttons .formula-input {
+#buttons .formula-wrapper {
   -ms-grid-column: 1;
   -ms-grid-column-span: 6;
   grid-column: 1 / span 6;
@@ -47,6 +53,69 @@ h1 {
   text-align: right;
   line-height: 65px;
   padding-right: 25px;
+}
+
+#buttons .formula-input {
+  position: relative;
+  height: 40px;
+  float: right;
+  width: 80%;
+  top: 12.5px;
+  text-align: right;
+}
+
+#buttons #big-operator-input {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  left: 5px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 65px;
+  width: 50px;
+}
+
+#buttons #big-operator-input #active-big-operator {
+  position: relative;
+  top: 0;
+  margin: 0;
+  line-height: 25px;
+  text-align: center;
+  height: 25px;
+}
+
+#buttons #big-operator-input .limit-wrapper {
+  height: 18px;
+  width: 60px;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#buttons #big-operator-input .limit-wrapper input {
+  border: 1px solid grey;
+  border-radius: 2.5px;
+  height: 10px;
+  width: 15px;
+  padding: 0 2px;
+}
+
+#buttons #big-operator-input .limit-wrapper input:hover {
+  cursor: pointer;
+}
+
+#buttons #big-operator-input .limit-wrapper label {
+  margin-left: 10px;
 }
 
 * {
@@ -64,6 +133,10 @@ h1 {
   background-color: #479CB9;
 }
 
+#i-btn {
+  background-color: #e593db;
+}
+
 #equals {
   background-color: #6B9287;
 }
@@ -77,8 +150,18 @@ h1 {
   font-size: 40px;
 }
 
-.formula-input {
+.limit-wrapper label, .limit-wrapper input {
+  text-align: center;
+  font-size: 8px;
+}
+
+.formula-wrapper {
   letter-spacing: 0.05em;
   font-size: 30px;
+}
+
+.formula-wrapper #active-big-operator {
+  font-size: 30px;
+  letter-spacing: 0.025em;
 }
 /*# sourceMappingURL=main.css.map */
