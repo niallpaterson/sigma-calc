@@ -26,7 +26,7 @@ const addEventListeners = {
     elements.bigOperators.forEach((button) => {
       button.addEventListener('click', () => {
         bigNotation.activeBigOperator = button.textContent;
-        elements.activeBigOperator.value += button.textContent;
+        elements.activeBigOperator.textContent = button.textContent;
       });
     });
     return this;
@@ -48,7 +48,7 @@ const addEventListeners = {
   toEquals() {
     elements.equals.addEventListener('click', () => {
       const multiDigitNumeralStringsJoined = joinMultiDigitNumerals(
-        elements.formulaInput.textContent.split('')
+        elements.formulaInput.value.split('')
       );
       const parsedFormula = parseInputStringNumerals(multiDigitNumeralStringsJoined);
       elements.formulaInput.value = calculateResult(parsedFormula);
