@@ -51,7 +51,17 @@ const addEventListeners = {
         elements.formulaInput.value.split('')
       );
       const parsedFormula = parseInputStringNumerals(multiDigitNumeralStringsJoined);
-      elements.formulaInput.value = calculateResult(parsedFormula);
+      if (bigNotation.activeBigOperator === 'Σ') {
+        elements.formulaInput.value = bigNotation.sigma(
+          parsedFormula, elements.lowerLimit.value, elements.upperLimit.value
+        );
+      } else if (bigNotation.activeBigOperator === 'Π') {
+        elements.formulaInput.value = bigNotation.pi(
+          parsedFormula, elements.lowerLimit.value, elements.upperLimit.value
+        );
+      } else {
+        elements.formulaInput.value = calculateResult(parsedFormula);
+      }
     });
     return this;
   },
