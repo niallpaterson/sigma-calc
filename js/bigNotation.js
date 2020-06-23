@@ -2,7 +2,7 @@ import calculateResult from './calculateResult.js';
 
 const bigNotation = {
   activeBigOperator: 'Σ',
-  sigma(formula, lowerLimit = 1, upperLimit = 1) {
+  sigma(formula, lowerLimit, upperLimit) {
     let result = 0;
     for (let i = lowerLimit; i <= upperLimit; i++) {
       const workingFormula = formula.map((symbol) => {
@@ -18,7 +18,7 @@ const bigNotation = {
 
     return result;
   },
-  pi(formula, lowerLimit = 1, upperLimit = 1) {
+  pi(formula, lowerLimit, upperLimit) {
     let result = 1;
     for (let i = lowerLimit; i <= upperLimit; i++) {
       const workingFormula = formula.map((symbol) => {

@@ -2,7 +2,6 @@ import elements from './elements.js';
 import calculateResult from './calculateResult.js';
 import joinMultiDigitNumerals from './joinMultiDigitNumerals.js';
 import parseInputStringNumerals from './parseInputStringNumerals.js';
-import parseBigOpVariable from './parseBigOpVariable.js';
 import bigNotation from './bigNotation.js';
 
 
@@ -51,14 +50,14 @@ const addEventListeners = {
       const multiDigitNumeralStringsJoined = joinMultiDigitNumerals(
         elements.formulaInput.value.split('')
       );
-      const parsedFormula = parseInputStringNumerals(parseBigOpVariable(multiDigitNumeralStringsJoined, Number(elements.lowerLimit.value)));
+      const parsedFormula = parseInputStringNumerals(multiDigitNumeralStringsJoined);
       if (bigNotation.activeBigOperator === 'Σ') {
         elements.formulaInput.value = bigNotation.sigma(
-          parsedFormula, elements.lowerLimit.value, elements.upperLimit.value
+          parsedFormula, parseInt(elements.lowerLimit.value, 10), parseInt(elements.upperLimit.value, 10)
         );
       } else if (bigNotation.activeBigOperator === 'Π') {
         elements.formulaInput.value = bigNotation.pi(
-          parsedFormula, elements.lowerLimit.value, elements.upperLimit.value
+          parsedFormula, parseInt(elements.lowerLimit.value, 10), parseInt(elements.upperLimit.value, 10)
         );
       } else {
         elements.formulaInput.value = calculateResult(parsedFormula);
