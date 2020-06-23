@@ -8,6 +8,5 @@ window.onload = () => {
     .toBrackets()
     .toPeriod()
     .toEquals()
-    .toACdelete()
-    .toDelete();
+    .toACdelete();
 };

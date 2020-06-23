@@ -2,6 +2,7 @@ import elements from './elements.js';
 import calculateResult from './calculateResult.js';
 import joinMultiDigitNumerals from './joinMultiDigitNumerals.js';
 import parseInputStringNumerals from './parseInputStringNumerals.js';
+import parseBigOpVariable from './parseBigOpVariable.js';
 import bigNotation from './bigNotation.js';
 
 
@@ -50,7 +51,7 @@ const addEventListeners = {
       const multiDigitNumeralStringsJoined = joinMultiDigitNumerals(
         elements.formulaInput.value.split('')
       );
-      const parsedFormula = parseInputStringNumerals(multiDigitNumeralStringsJoined);
+      const parsedFormula = parseInputStringNumerals(parseBigOpVariable(multiDigitNumeralStringsJoined, Number(elements.lowerLimit.value)));
       if (bigNotation.activeBigOperator === 'Σ') {
         elements.formulaInput.value = bigNotation.sigma(
           parsedFormula, elements.lowerLimit.value, elements.upperLimit.value
@@ -68,12 +69,6 @@ const addEventListeners = {
   toACdelete() {
     elements.ACdelete.addEventListener('click', () => {
       elements.formulaInput.value = '';
-    });
-    return this;
-  },
-  toDelete() {
-    elements.delete.addEventListener('click', () => {
-      elements.formulaInput.value = elements.formulaInput.value.slice(0, -1);
     });
     return this;
   },
