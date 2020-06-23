@@ -18,9 +18,15 @@
       <div class="formula-wrapper">
         <input class="formula-input"></input>
         <div id="big-operator-input">
-          <input type='number' id='upper-limit' placeholder='n ='>
+          <div class="limit-wrapper">
+            <label for="upper-limit">n=</label>
+            <input type='number' id='upper-limit' placeholder='1'>
+          </div>
           <p id="active-big-operator">Σ</p>
-          <input type='number' id='lower-limit' placeholder='i ='>
+          <div class="limit-wrapper">
+            <label for="lower-limit">i=</label>
+            <input type='number' id='lower-limit' placeholder='1'>
+          </div>
         </div>
         <div id="sum-input"></div>
       </div>

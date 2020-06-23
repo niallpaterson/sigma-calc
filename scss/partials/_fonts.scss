@@ -7,16 +7,18 @@ h1 {
   font-size: 40px;
 }
 
-input {
+.limit-wrapper {
+  label, input {
   text-align: center;
-  font-size: 12px;
-}
-
-#active-big-operator {
-  font-size: 30px;
+  font-size: 8px;
+  }
 }
 
 .formula-wrapper {
   letter-spacing: 0.05em;
   font-size: 30px;
+  #active-big-operator {
+    font-size: 30px;
+    letter-spacing: 0.025em;
+  }
 }
