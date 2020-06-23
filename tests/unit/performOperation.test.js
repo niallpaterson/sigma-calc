@@ -1,4 +1,4 @@
-import performOperation from '../../js/performOperations';
+import performOperation from '../../js/performOperation';
 
 describe('performs simple binary operation correctly', () => {
   test('addition', () => {
