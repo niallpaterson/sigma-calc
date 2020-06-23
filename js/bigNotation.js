@@ -1,7 +1,7 @@
 import calculateResult from './calculateResult.js';
 
 const bigNotation = {
-  activeBigOperator: null,
+  activeBigOperator: 'Σ',
   sigma(formula, lowerLimit = 1, upperLimit = 1) {
     let result = 0;
     for (let i = lowerLimit; i <= upperLimit; i++) {
