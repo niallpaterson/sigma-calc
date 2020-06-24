@@ -1,9 +1,6 @@
 import elements from './elements.js';
-import calculateResult from './calculateResult.js';
-import joinMultiDigitNumerals from './joinMultiDigitNumerals.js';
-import parseInputStringNumerals from './parseInputStringNumerals.js';
-import bigNotation from './bigNotation.js';
-
+import equation from './solveEquation.js';
+import parseInputFormula from './parseInputFormula.js';
 
 const addEventListeners = {
   toNumeralBtns() {
@@ -25,7 +22,7 @@ const addEventListeners = {
   toBigOperatorBtns() {
     elements.bigOperators.forEach((button) => {
       button.addEventListener('click', () => {
-        bigNotation.activeBigOperator = button.textContent;
+        equation.activeBigOperator = button.textContent;
         elements.activeBigOperator.textContent = button.textContent;
       });
     });
@@ -47,21 +44,13 @@ const addEventListeners = {
   },
   toEquals() {
     elements.equals.addEventListener('click', () => {
-      const multiDigitNumeralStringsJoined = joinMultiDigitNumerals(
-        elements.formulaInput.value.split('')
+      console.log(elements.formulaInput.value);
+      console.log(parseInputFormula(elements.formulaInput.value));
+      elements.formulaInput.value = equation.solve(
+        parseInputFormula(elements.formulaInput.value),
+        parseInt(elements.lowerLimit.value, 10),
+        parseInt(elements.upperLimit.value, 10)
       );
-      const parsedFormula = parseInputStringNumerals(multiDigitNumeralStringsJoined);
-      if (bigNotation.activeBigOperator === 'Σ') {
-        elements.formulaInput.value = bigNotation.sigma(
-          parsedFormula, parseInt(elements.lowerLimit.value, 10), parseInt(elements.upperLimit.value, 10)
-        );
-      } else if (bigNotation.activeBigOperator === 'Π') {
-        elements.formulaInput.value = bigNotation.pi(
-          parsedFormula, parseInt(elements.lowerLimit.value, 10), parseInt(elements.upperLimit.value, 10)
-        );
-      } else {
-        elements.formulaInput.value = calculateResult(parsedFormula);
-      }
     });
     return this;
   },
