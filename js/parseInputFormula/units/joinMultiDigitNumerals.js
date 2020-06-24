@@ -1,4 +1,4 @@
-import isNumeralString from './isNumeralString.js';
+import isNumeralString from '../isNumeralString.js';
 
 const joinMultiDigitNumerals = (formula) => {
   const staleNumeralIndexes = [];
