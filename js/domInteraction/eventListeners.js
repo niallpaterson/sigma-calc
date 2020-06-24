@@ -1,6 +1,6 @@
 import elements from './elements.js';
-import equation from './solveEquation.js';
-import parseInputFormula from './parseInputFormula.js';
+import equation from '../performCalculation/solveEquation.js';
+import parseInputFormula from '../parseInputFormula/units/parseInputFormula.js';
 
 const addEventListeners = {
   toNumeralBtns() {
@@ -44,8 +44,6 @@ const addEventListeners = {
   },
   toEquals() {
     elements.equals.addEventListener('click', () => {
-      console.log(elements.formulaInput.value);
-      console.log(parseInputFormula(elements.formulaInput.value));
       elements.formulaInput.value = equation.solve(
         parseInputFormula(elements.formulaInput.value),
         parseInt(elements.lowerLimit.value, 10),

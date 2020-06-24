@@ -1,8 +1,8 @@
-import isAnOperator from './isAnOperator.js';
-import outputIsValidNumber from './outputIsValidNumber.js';
+import isAnOperator from './symbolValidators/isAnOperator.js';
+import outputIsValidNumber from './symbolValidators/outputIsValidNumber.js';
 import performOperation from './performOperation.js';
-import getIndexesOfNarrowestOperators from './getIndexesOfNarrowestOperators.js';
-import bodmasArray from './bodmasArray.js';
+import getIndexesOfNarrowestOperators from './narrowestOperatorSearch/getIndexesOfNarrowestOperators.js';
+import bodmasArray from './mathObjects/bodmasArray.js';
 
 const calculateIteration = (formula) => {
   for (let i = 0; i < bodmasArray.length; i++) {

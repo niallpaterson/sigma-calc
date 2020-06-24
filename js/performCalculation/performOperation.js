@@ -1,4 +1,4 @@
-import operators from './operators.js';
+import operators from './mathObjects/operators.js';
 
 const performOperation = (formula, narrowestOperatorIndex) => {
   // perform operation

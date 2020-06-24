@@ -1,4 +1,4 @@
-import bigOperators from './bigOperators.js';
+import bigOperators from './mathObjects/bigOperators.js';
 
 const equation = {
   currentValue: null,
