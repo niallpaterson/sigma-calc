@@ -9,7 +9,6 @@ const elements = {
   bigOperators: document.querySelectorAll('.big-operator'),
   brackets: document.querySelectorAll('.bracket'),
   ACdelete: document.querySelector('#AC-btn'),
-  delete: document.querySelector('#del-btn'),
   period: document.querySelector('#period'),
   equals: document.querySelector('#equals'),
 };
