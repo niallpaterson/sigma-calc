@@ -1,6 +1,6 @@
 import elements from './elements.js';
 import equation from '../performCalculation/solveEquation.js';
-import parseInputFormula from '../parseInputFormula/units/parseInputFormula.js';
+import parseInputFormula from '../parseInputFormula/parseInputFormula.js';
 
 const addEventListeners = {
   toNumeralBtns() {
