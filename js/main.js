@@ -1,4 +1,4 @@
-import addEventListeners from './eventListeners.js';
+import addEventListeners from './domInteraction/eventListeners.js';
 
 window.onload = () => {
   addEventListeners

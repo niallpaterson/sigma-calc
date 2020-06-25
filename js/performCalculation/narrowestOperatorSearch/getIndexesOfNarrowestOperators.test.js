@@ -1,4 +1,4 @@
-import getIndexesOfNarrowestOperators from '../../js/getIndexesOfNarrowestOperators';
+import getIndexesOfNarrowestOperators from './getIndexesOfNarrowestOperators';
 
 describe('properly returns non-nested narrowest scope operator', () => {
   test('non-nested addition', () => {

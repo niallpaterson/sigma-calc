@@ -1,4 +1,4 @@
-import operators from '../../js/operators';
+import operators from './operators.js';
 
 describe('operators output numbers', () => {
   test('addition', () => {

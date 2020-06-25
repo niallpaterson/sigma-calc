@@ -1,4 +1,4 @@
-import countScopingBrackets from '../../js/countScopingBrackets';
+import countScopingBrackets from './countScopingBrackets.js';
 
 describe('returns correct number of scoping brackets', () => {
   test('no brackets', () => {

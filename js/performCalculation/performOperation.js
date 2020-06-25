@@ -1,4 +1,4 @@
-import operators from './operators.js';
+import operators from './mathObjects/operators.js';
 
 const performOperation = (formula, narrowestOperatorIndex) => {
   // perform operation
@@ -13,7 +13,10 @@ const performOperation = (formula, narrowestOperatorIndex) => {
   }).filter((symbol, symbolIndex) => {
     // if operands were nested in brackets, remove the brackets
     if ((symbolIndex === narrowestOperatorIndex + 2 && symbol === ')')) { return false; }
-    if ((symbolIndex === narrowestOperatorIndex - 2 && symbol === '(')) { return false; }
+
+    if (formula[narrowestOperatorIndex] !== '√') {
+      if ((symbolIndex === narrowestOperatorIndex - 2 && symbol === '(')) { return false; }
+    } else if ((symbolIndex === narrowestOperatorIndex - 1 && symbol === '(')) { return false; }
     // remove operands
     if ((formula[narrowestOperatorIndex] !== '√') && (symbolIndex === narrowestOperatorIndex - 1)) { return false; }
     return symbolIndex !== narrowestOperatorIndex + 1;

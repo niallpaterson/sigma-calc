@@ -1,4 +1,4 @@
-import isAnOperator from '../../js/isAnOperator';
+import isAnOperator from './isAnOperator.js';
 
 describe('returns true for binary operators', () => {
   test('returns true for addition', () => {

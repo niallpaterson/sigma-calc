@@ -1,4 +1,4 @@
-import isAnOperator from './isAnOperator.js';
+import isAnOperator from '../symbolValidators/isAnOperator.js';
 import countScopingBrackets from './countScopingBrackets.js';
 
 // The narrowest scope operator is that with the most scoping brackets
