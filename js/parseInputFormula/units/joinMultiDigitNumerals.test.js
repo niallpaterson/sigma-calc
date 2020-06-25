@@ -1,4 +1,4 @@
-import joinMultiDigitNumerals from '../../js/joinMultiDigitNumerals.js';
+import joinMultiDigitNumerals from './joinMultiDigitNumerals.js';
 
 describe('properly concantenates numeral strings', () => {
   test('one multi-digit numeral', () => {

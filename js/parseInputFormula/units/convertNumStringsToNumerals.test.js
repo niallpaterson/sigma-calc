@@ -1,8 +1,8 @@
-import parseInputStringNumerals from '../../js/parseInputStringNumerals';
+import convertNumStringsToNumerals from './convertNumStringsToNumerals.js';
 
 describe('properly parses numerals', () => {
   test('array only containing numerals', () => {
-    expect(parseInputStringNumerals([
+    expect(convertNumStringsToNumerals([
       '1', '2', '3', '4', '5',
       '6', '7', '8', '9', '0',
     ]))
@@ -15,7 +15,7 @@ describe('properly parses numerals', () => {
 
 describe('does not parse non-numerals', () => {
   test('array only containing numerals', () => {
-    expect(parseInputStringNumerals([
+    expect(convertNumStringsToNumerals([
       ')', '(', '+', '/', '−', '.', '÷',
     ]))
       .toEqual([
