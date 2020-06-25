@@ -2,59 +2,65 @@ import elements from './elements.js';
 import equation from '../performCalculation/solveEquation.js';
 import parseInputFormula from '../parseInputFormula/parseInputFormula.js';
 
+const {
+  formulaInput, activeBigOperator, upperLimit,
+  lowerLimit, numerals, operators, bigOperators,
+  brackets, ACdelete, period, equals,
+} = elements;
+
 const addEventListeners = {
   toNumeralBtns() {
-    elements.numerals.forEach((button) => {
+    numerals.forEach((button) => {
       button.addEventListener('click', () => {
-        elements.formulaInput.value += button.textContent;
+        formulaInput.value += button.textContent;
       });
     });
     return this;
   },
   toOperatorBtns() {
-    elements.operators.forEach((button) => {
+    operators.forEach((button) => {
       button.addEventListener('click', () => {
-        elements.formulaInput.value += button.textContent;
+        formulaInput.value += button.textContent;
       });
     });
     return this;
   },
   toBigOperatorBtns() {
-    elements.bigOperators.forEach((button) => {
+    bigOperators.forEach((button) => {
       button.addEventListener('click', () => {
         equation.activeBigOperator = button.textContent;
-        elements.activeBigOperator.textContent = button.textContent;
+        activeBigOperator.textContent = button.textContent;
       });
     });
     return this;
   },
   toBrackets() {
-    elements.brackets.forEach((button) => {
+    brackets.forEach((button) => {
       button.addEventListener('click', () => {
-        elements.formulaInput.value += button.textContent;
+        formulaInput.value += button.textContent;
       });
     });
     return this;
   },
   toPeriod() {
-    elements.period.addEventListener('click', () => {
-      elements.formulaInput.value += '.';
+    period.addEventListener('click', () => {
+      formulaInput.value += '.';
     });
     return this;
   },
   toEquals() {
-    elements.equals.addEventListener('click', () => {
-      elements.formulaInput.value = equation.solve(
-        parseInputFormula(elements.formulaInput.value),
-        parseInt(elements.lowerLimit.value, 10),
-        parseInt(elements.upperLimit.value, 10)
+    equals.addEventListener('click', () => {
+      formulaInput.value = equation.solve(
+        parseInputFormula(formulaInput.value),
+        parseInt(lowerLimit.value, 10),
+        parseInt(upperLimit.value, 10)
       );
     });
     return this;
   },
   toACdelete() {
-    elements.ACdelete.addEventListener('click', () => {
-      elements.formulaInput.value = '';
+    ACdelete.addEventListener('click', () => {
+      formulaInput.value = '';
     });
     return this;
   },
