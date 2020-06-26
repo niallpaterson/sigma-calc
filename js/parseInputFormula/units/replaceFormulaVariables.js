@@ -1,5 +1,4 @@
-const replaceFormulaVariables = (formula, lowerLimit) => {
-  return formula.map((symbol) => ((symbol === 'i') ? lowerLimit : symbol));
-};
+const replaceFormulaVariables = (formula, lowerLimit) => formula
+  .map((symbol) => ((symbol === 'i') ? lowerLimit : symbol));
 
 export default replaceFormulaVariables;
