@@ -18,4 +18,3 @@ The following features are in the pipeline:
 
 - Floating point number handling
 
-- Exponentation functionality
