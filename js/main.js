@@ -8,5 +8,6 @@ window.onload = () => {
     .toBrackets()
     .toPeriod()
     .toEquals()
-    .toACdelete();
+    .toACdelete()
+    .forButtonHighlights();
 };
