@@ -11,6 +11,7 @@ const elements = {
   ACdelete: document.querySelector('#AC-btn'),
   period: document.querySelector('#period'),
   equals: document.querySelector('#equals'),
+  allButtons: document.querySelectorAll('button'),
 };
 
 export default elements;

@@ -1,11 +1,12 @@
 import elements from './elements.js';
 import equation from '../performCalculation/solveEquation.js';
 import parseInputFormula from '../parseInputFormula/parseInputFormula.js';
+import highlightButton from './highlightButton.js';
 
 const {
   formulaInput, activeBigOperator, upperLimit,
   lowerLimit, numerals, operators, bigOperators,
-  brackets, ACdelete, period, equals,
+  brackets, ACdelete, period, equals, allButtons
 } = elements;
 
 const addEventListeners = {
@@ -64,6 +65,15 @@ const addEventListeners = {
     });
     return this;
   },
+  forButtonHighlights() {
+    allButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        highlightButton(button);
+      });
+      return this;
+    });
+  },
 };
+
 
 export default addEventListeners;
