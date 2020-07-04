@@ -4,7 +4,7 @@ A simple calculator app written in JavaScript that allows users to perform calcu
 
 ## Usage
 
-Mostly self explanatory. Use the sigma and greek buttons to switch notation. 
+Mostly self explanatory. Use sigma and pi buttons to switch notation. 
 
 Fill in upper and lower limits and enter calculation as desired.
 
