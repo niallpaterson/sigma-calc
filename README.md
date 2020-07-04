@@ -4,13 +4,9 @@ A simple calculator app written in JavaScript that allows users to perform calcu
 
 ## Usage
 
-Mostly self explanatory. Use sigma and pi buttons to switch notation. 
+Mostly self explanatory. Use sigma and pi buttons to switch notation. Fill in upper and lower limits and enter calculation.
 
-Fill in upper and lower limits and enter calculation as desired.
-
-By default the calculator is set to calculate in sigma notation with the lower and upper limits set to 1. 
-
-This means that it works like a standard calculator out the box. 
+By default the calculator is set to calculate in sigma notation with the lower and upper limits set to 1. So it functions like a standard calculator out of the box. 
 
 ## Future features
 
