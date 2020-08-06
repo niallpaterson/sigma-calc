@@ -11,7 +11,6 @@ const parseInputFormula = compose(
   invertNegativeNumbers,
   convertNumStringsToNumerals,
   joinMultiDigitNumerals,
-  splitInputFormula,
 );
 
 export default parseInputFormula;
