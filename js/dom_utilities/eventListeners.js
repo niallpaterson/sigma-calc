@@ -1,6 +1,6 @@
 import elements from './elements.js';
 import equation from '../performCalculation/solveEquation.js';
-import parseInputFormula from '../parseInputFormula/parseInputFormula.js';
+import parseInputFormula from '../parse_input/parseInputFormula.js';
 import highlightButton from './highlightButton.js';
 
 const {
