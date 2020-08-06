@@ -52,7 +52,7 @@ const addEventListeners = {
   toEquals() {
     equals.addEventListener('click', () => {
       formulaInput.value = equation.solve(
-        parseInputFormula(formulaInput.value),
+        parseInputFormula(formulaInput.value.split('')),
         parseInt(lowerLimit.value, 10),
         parseInt(upperLimit.value, 10)
       );
