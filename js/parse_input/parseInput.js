@@ -8,11 +8,11 @@ const {
   joinMultiDigitNumerals,
 } = utilities;
 
-const parseInputFormula = compose(
+const parseInput = compose(
   parseExponents,
   invertNegativeNumbers,
   convertNumStringsToNumerals,
   joinMultiDigitNumerals,
 );
 
-export default parseInputFormula;
+export default parseInput;
