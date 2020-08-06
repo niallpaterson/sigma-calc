@@ -6,7 +6,7 @@ import highlightButton from './highlightButton.js';
 const {
   formulaInput, activeBigOperator, upperLimit,
   lowerLimit, numerals, operators, bigOperators,
-  brackets, ACdelete, period, equals, allButtons
+  brackets, ACdelete, period, equals, allButtons,
 } = elements;
 
 const addEventListeners = {
