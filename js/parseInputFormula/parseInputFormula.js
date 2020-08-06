@@ -1,9 +1,12 @@
-import joinMultiDigitNumerals from './parsers/joinMultiDigitNumerals.js';
-import convertNumStringsToNumerals from './parsers/convertNumStringsToNumerals.js.js.js.js';
-import invertNegativeNumbers from './parsers/invertNegativeNumbers.js';
-import parseExponents from './parsers/parseExponents.js.js.js.js';
+import utilities from './utilities';
 
-const compose = (...funcs) => (input) => funcs.reduceRight((acc, func) => func(acc), input);
+const {
+  compose,
+  parseExponents,
+  invertNegativeNumbers,
+  convertNumStringsToNumerals,
+  joinMultiDigitNumerals,
+} = utilities;
 
 const parseInputFormula = compose(
   parseExponents,

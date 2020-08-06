@@ -1,4 +1,4 @@
-import invertNegativeNumbers from './invertNegativeNumbers.js';
+import invertNegativeNumbers from './invertNegativeNumbers';
 
 describe('correctly negates unary instances of subtraction', () => {
   test('no brackets', () => {

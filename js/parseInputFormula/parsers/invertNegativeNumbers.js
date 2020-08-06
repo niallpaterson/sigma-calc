@@ -1,8 +1,6 @@
-=>const existsOnArray = (i) => i >= 0;
-const oneBackIsTilde = (i, arr) => existsOnArray(i - 1) && arr[i - 1] === '−';
-const twoBackIsNumber = (i, arr) => existsOnArray(i - 2) && typeof arr[i - 2] === 'number';
-const isNegativeNum = (i, arr) => oneBackIsTilde(i, arr) && !twoBackIsNumber(i, arr);
-const isUnaryTilde = (i, arr) => isNegativeNum(i + 1, arr);
+import utilities from '../utilities';
+
+const { isNegativeNum, isUnaryTilde } = utilities;
 
 const invertNegativeNumbers = (formula) => formula
   .map((x, i, arr) => (isNegativeNum(i, arr) ? x * -1 : x))
