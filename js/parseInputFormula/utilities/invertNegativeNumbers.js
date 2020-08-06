@@ -1,20 +1,11 @@
-const invertNegativeNumbers = (formula) => {
-  const indexesOfUsedSubtractions = [];
-  return formula.map((symbol, symbolIndex) => {
-    // invert any negative numbers
-    if (formula[symbolIndex - 1] === '−'
-      && typeof formula[symbolIndex - 2] !== 'number'
-      && formula[symbolIndex - 2] !== ')'
-      && typeof symbol === 'number') {
-      // track the negation symbols for filter
-      indexesOfUsedSubtractions.push(symbolIndex - 1);
-      return symbol * -1;
-    }
-    return symbol;
-  }).filter((symbol, symbolIndex) => {
-    // remove remanining negation symbols
-    return !(indexesOfUsedSubtractions.includes(symbolIndex));
-  });
-};
+const existsOnArray = (i) => i >= 0;
+const oneBackIsTilde = (i, arr) => existsOnArray(i - 1) && arr[i - 1] === '−';
+const twoBackIsNumber = (i, arr) => existsOnArray(i - 2) && typeof arr[i - 2] === 'number';
+const isNegativeNum = (i, arr) => oneBackIsTilde(i, arr) && !twoBackIsNumber(i, arr);
+const isUnaryTilde = (i, arr) => isNegativeNum(i + 1, arr);
+
+const invertNegativeNumbers = (formula) => formula
+  .map((x, i, arr) => (isNegativeNum(i, arr) ? x * -1 : x))
+  .filter((x, i, arr) => !isUnaryTilde(i, arr));
 
 export default invertNegativeNumbers;
