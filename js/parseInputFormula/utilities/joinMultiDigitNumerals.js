@@ -1,11 +1,10 @@
 import isNumeralString from '../isNumeralString.js';
 
 const joinMultiDigitNumerals = (formula) => formula
-.reduce((acc, symbol, index, formula) => {
-    if (index === 0) { return [symbol] }
-    if (!isNumeralString(symbol)) { return [...acc, symbol] }
-    if (!isNumeralString(formula[index - 1])) { return [...acc, symbol] }
-    return acc.map((item, j) => (j === acc.length - 1) ? (item + symbol) : item);
+  .reduce((acc, x, i, form) => {
+    if (!isNumeralString(x)) { return [...acc, x] }
+    if (!isNumeralString(form[i - 1])) { return [...acc, x] }
+    return acc.map((y, j) => ((j === acc.length - 1) ? (y + x) : y));
   }, []);
 
 export default joinMultiDigitNumerals;
