@@ -1,12 +1,12 @@
 import elements from './elements.js';
 import equation from '../performCalculation/solveEquation.js';
-import parseInputFormula from '../parseInputFormula/parseInputFormula.js';
+import parseInput from '../parse_input/parseInputFormula.js';
 import highlightButton from './highlightButton.js';
 
 const {
   formulaInput, activeBigOperator, upperLimit,
   lowerLimit, numerals, operators, bigOperators,
-  brackets, ACdelete, period, equals, allButtons
+  brackets, ACdelete, period, equals, allButtons,
 } = elements;
 
 const addEventListeners = {
@@ -52,7 +52,7 @@ const addEventListeners = {
   toEquals() {
     equals.addEventListener('click', () => {
       formulaInput.value = equation.solve(
-        parseInputFormula(formulaInput.value.split('')),
+        parseInput(formulaInput.value.split('')),
         parseInt(lowerLimit.value, 10),
         parseInt(upperLimit.value, 10)
       );
