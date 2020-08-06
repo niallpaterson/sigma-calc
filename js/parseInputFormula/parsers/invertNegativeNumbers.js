@@ -1,4 +1,4 @@
-const existsOnArray = (i) => i >= 0;
+=>const existsOnArray = (i) => i >= 0;
 const oneBackIsTilde = (i, arr) => existsOnArray(i - 1) && arr[i - 1] === '−';
 const twoBackIsNumber = (i, arr) => existsOnArray(i - 2) && typeof arr[i - 2] === 'number';
 const isNegativeNum = (i, arr) => oneBackIsTilde(i, arr) && !twoBackIsNumber(i, arr);

@@ -1,8 +1,7 @@
-import joinMultiDigitNumerals from './units/joinMultiDigitNumerals.js';
-import convertNumStringsToNumerals from './units/convertNumStringsToNumerals.js';
-import splitInputFormula from './units/splitInputFormula.js';
-import invertNegativeNumbers from './units/invertNegativeNumbers.js';
-import parseExponents from './units/parseExponents.js';
+import joinMultiDigitNumerals from './parsers/joinMultiDigitNumerals.js';
+import convertNumStringsToNumerals from './parsers/convertNumStringsToNumerals.js.js.js.js';
+import invertNegativeNumbers from './parsers/invertNegativeNumbers.js';
+import parseExponents from './parsers/parseExponents.js.js.js.js';
 
 const compose = (...funcs) => (input) => funcs.reduceRight((acc, func) => func(acc), input);
 
