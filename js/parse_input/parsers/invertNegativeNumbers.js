@@ -1,4 +1,4 @@
-import utilities from '../utilities';
+import utilities from '../utilities/index.js';
 
 const { isNegativeNum, isUnaryTilde } = utilities;
 
