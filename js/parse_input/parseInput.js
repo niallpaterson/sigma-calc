@@ -1,12 +1,15 @@
-import utilities from './utilities';
+import parsers from './parsers/index.js';
+import utilities from './utilities/index.js';
+
+
+const { compose } = utilities;
 
 const {
-  compose,
   parseExponents,
   invertNegativeNumbers,
   convertNumStringsToNumerals,
   joinMultiDigitNumerals,
-} = utilities;
+} = parsers;
 
 const parseInput = compose(
   parseExponents,

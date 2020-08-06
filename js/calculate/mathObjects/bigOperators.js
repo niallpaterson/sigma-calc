@@ -1,5 +1,5 @@
-import calculateIteration from '../calculateIteration';
-import replaceFormulaVariables from '../../parse_input/parsers/replaceFormulaVariables';
+import calculateIteration from '../calculateIteration.js';
+import replaceFormulaVariables from '../../parse_input/parsers/replaceFormulaVariables.js';
 
 const bigOperators = {
   sigma(formula, lowerLimit, upperLimit) {

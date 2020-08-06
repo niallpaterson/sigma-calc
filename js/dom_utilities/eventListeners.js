@@ -1,6 +1,6 @@
 import elements from './elements.js';
-import equation from '../performCalculation/solveEquation.js';
-import parseInput from '../parse_input/parseInputFormula.js';
+import equation from '../calculate/solveEquation.js';
+import parseInput from '../parse_input/parseInput.js';
 import highlightButton from './highlightButton.js';
 
 const {
@@ -54,7 +54,7 @@ const addEventListeners = {
       formulaInput.value = equation.solve(
         parseInput(formulaInput.value.split('')),
         parseInt(lowerLimit.value, 10),
-        parseInt(upperLimit.value, 10)
+        parseInt(upperLimit.value, 10),
       );
     });
     return this;

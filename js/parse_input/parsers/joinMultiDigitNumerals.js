@@ -1,4 +1,4 @@
-import isNumeralString from '../utilities/isNumeralString';
+import isNumeralString from '../utilities/isNumeralString.js';
 
 const joinMultiDigitNumerals = (formula) => formula
   .reduce((acc, x, i, form) => {

@@ -1,5 +1,5 @@
-import oneBackIsTilde from './oneBackIsTilde';
-import twoBackIsNumber from './twoBackIsNumber';
+import oneBackIsTilde from './oneBackIsTilde.js';
+import twoBackIsNumber from './twoBackIsNumber.js';
 
 const isNegativeNum = (i, arr) => oneBackIsTilde(i, arr) && !twoBackIsNumber(i, arr);
 
