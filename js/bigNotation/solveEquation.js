@@ -8,6 +8,7 @@ const solveEquation = (activeBigOperator, rawEquation, lowerLimit, upperLimit) =
   const equation = parseInput(rawEquation);
   if (activeBigOperator === 'Σ') return sigma(equation, lowerLimit, upperLimit);
   if (activeBigOperator === 'Π') return pi(equation, lowerLimit, upperLimit);
+  return new Error('No big operator active');
 };
 
 export default solveEquation;
