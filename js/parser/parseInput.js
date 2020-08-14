@@ -1,9 +1,7 @@
 import parsers from './parsers/index.js';
-import utilities from './utilities/index.js';
-
+import utilities from '../utility/index.js';
 
 const { compose } = utilities;
-
 const {
   parseExponents,
   invertNegativeNumbers,
