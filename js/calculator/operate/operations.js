@@ -1,4 +1,4 @@
-const operators = {
+const operations = {
   '+': (leftOperand, rightOperand) => leftOperand + rightOperand,
   '−': (leftOperand, rightOperand) => leftOperand - rightOperand,
   '×': (leftOperand, rightOperand) => leftOperand * rightOperand,
@@ -7,4 +7,4 @@ const operators = {
   '√': (leftOperand, rightOperand) => Math.sqrt(rightOperand),
 };
 
-export default operators;
+export default operations;
