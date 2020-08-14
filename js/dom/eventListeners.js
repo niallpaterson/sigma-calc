@@ -1,7 +1,9 @@
 import elements from './elements.js';
-import equation from '../calculate/solveEquation.js';
-import parseInput from '../parse_input/parseInput.js';
+import bigNotation from '../bigNotation/index.js';
+import parseInput from '../parser/parseInput.js';
 import highlightButton from './highlightButton.js';
+
+const { solveEquation } = bigNotation;
 
 const {
   formulaInput, activeBigOperator, upperLimit,
@@ -29,7 +31,6 @@ const addEventListeners = {
   toBigOperatorBtns() {
     bigOperators.forEach((button) => {
       button.addEventListener('click', () => {
-        equation.activeBigOperator = button.textContent;
         activeBigOperator.textContent = button.textContent;
       });
     });
@@ -51,7 +52,8 @@ const addEventListeners = {
   },
   toEquals() {
     equals.addEventListener('click', () => {
-      formulaInput.value = equation.solve(
+      formulaInput.value = solveEquation(
+        activeBigOperator.textContent,
         parseInput(formulaInput.value.split('')),
         parseInt(lowerLimit.value, 10),
         parseInt(upperLimit.value, 10),
@@ -74,6 +76,5 @@ const addEventListeners = {
     });
   },
 };
-
 
 export default addEventListeners;
