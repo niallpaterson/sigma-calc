@@ -1,4 +1,6 @@
-import joinMultiDigitNumerals from './joinMultiDigitNumerals.js';
+import parser from '../../../js/parser/index.js';
+
+const { joinMultiDigitNumerals } = parser;
 
 describe('properly concantenates numeral strings', () => {
   test('one multi-digit numeral', () => {

@@ -1,6 +1,8 @@
-import parseExponents from './parseExponents.js';
+import parser from '../../../js/parser/index.js';
 
-describe('proprly conjoins split exponent stars', () => {
+const { parseExponents } = parser;
+
+describe('properly conjoins split exponent stars', () => {
   test('single operator', () => {
     expect(parseExponents([3, '∗', '∗', 3]))
       .toEqual([3, '∗∗', 3]);

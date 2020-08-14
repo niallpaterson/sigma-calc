@@ -1,4 +1,6 @@
-import invertNegativeNumbers from './invertNegativeNumbers';
+import parser from '../../../js/parser/index.js';
+
+const { invertNegativeNumbers } = parser;
 
 describe('correctly negates unary instances of subtraction', () => {
   test('no brackets', () => {

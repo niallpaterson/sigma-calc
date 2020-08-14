@@ -1,4 +1,6 @@
-import convertNumStringsToNumerals from './convertNumStringsToNumerals.js';
+import parser from '../../../js/parser/index.js';
+
+const { convertNumStringsToNumerals } = parser;
 
 describe('properly parses numerals', () => {
   test('array only containing numerals', () => {

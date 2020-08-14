@@ -1,6 +1,8 @@
-import replaceFormulaVariables from './replaceFormulaVariables.js';
+import parser from '../../../js/parser/index.js';
 
-describe('proprly replaces formula variable', () => {
+const { replaceFormulaVariables } = parser;
+
+describe('correctly replaces formula variables', () => {
   test('single variable', () => {
     expect(replaceFormulaVariables([1, '+', 'i'], 9))
       .toEqual([1, '+', 9]);
