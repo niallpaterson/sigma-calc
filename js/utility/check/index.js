@@ -2,7 +2,7 @@ import existsOnArray from './array/existsOnArray.js';
 import isUnique from './array/isUnique.js';
 import oneBackIsTilde from './array/oneBackIsTilde.js';
 import twoBackIsNumber from './array/twoBackIsNumber.js';
-// import isValidInput from './array/isValidInput.js';
+import isValidInput from './array/isValidInput.js';
 
 import isNegativeNum from './number/isNegativeNum.js';
 import isNumber from './number/isNumber.js';
@@ -17,7 +17,7 @@ import isUnaryTilde from './string/isUnaryTilde.js';
 export default {
   existsOnArray,
   isUnique,
-  // isValidInput,
+  isValidInput,
   oneBackIsTilde,
   twoBackIsNumber,
   isNegativeNum,

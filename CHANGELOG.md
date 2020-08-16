@@ -1,3 +1,75 @@
+#### 1.3.0 (2020-08-16)
+
+##### Build System / Dependencies
+
+* **deps:**  bump lodash from 4.17.15 to 4.17.19 ([e7d947bb](https://github.com/niallpaterson/sigma-calc/commit/e7d947bb17130022c469dc98de4864bed31d3540))
+
+##### Chores
+
+*  comment unfinished input validator import ([fab95ab7](https://github.com/niallpaterson/sigma-calc/commit/fab95ab7f9fb795753f6cad778ae675e4605edfd))
+*  update import ([44b3bba3](https://github.com/niallpaterson/sigma-calc/commit/44b3bba320da6dbdaa2bb89addc5d1e0daaebd72))
+*  add directory barrells ([0fd86afd](https://github.com/niallpaterson/sigma-calc/commit/0fd86afdcb2ed1c005acccaf4ba76564bccc41ce))
+*  update gitignore ([beaec278](https://github.com/niallpaterson/sigma-calc/commit/beaec2781451db34dc0fda7a5968df1143d2a99e))
+*  add commitlint ([5614b073](https://github.com/niallpaterson/sigma-calc/commit/5614b0739cca1516fe5078fd33b617853a7ded17))
+
+##### Documentation Changes
+
+*  add title emoji ([0eecad1e](https://github.com/niallpaterson/sigma-calc/commit/0eecad1ebc0ebef9610431f129af8a329cc297aa))
+*  Add changelog ([573aeaaa](https://github.com/niallpaterson/sigma-calc/commit/573aeaaa50c2309153120d4c155d9cd844f6b1bb))
+* **changelog:**  update changelog ([5f899fc5](https://github.com/niallpaterson/sigma-calc/commit/5f899fc506b268859968c0e4fb606592ff700ee5))
+
+##### New Features
+
+*  add input validator ([2adba5c8](https://github.com/niallpaterson/sigma-calc/commit/2adba5c811c8ff97cc728e10fcd918fe300ac489))
+
+##### Bug Fixes
+
+*  incorrect imports throwing errors ([a51b7837](https://github.com/niallpaterson/sigma-calc/commit/a51b7837c619b879936533d77996e5b82631bec9))
+* **calculate:**  imports did not update ([a77968bc](https://github.com/niallpaterson/sigma-calc/commit/a77968bc69907eb302cbb10c34beb3324b5aa4e6))
+
+##### Refactors
+
+*  remove unnecessary compose barrel ([bfe3a4dd](https://github.com/niallpaterson/sigma-calc/commit/bfe3a4dd107fe06bcebc30fc46ddc34e3306387c))
+*  add error for consistent return ([a6945dc7](https://github.com/niallpaterson/sigma-calc/commit/a6945dc7bef179cb2790d15577a2e86307483206))
+*  remove unnecessary braces ([dc0015f1](https://github.com/niallpaterson/sigma-calc/commit/dc0015f1417c85364593185574e08756737af5f0))
+*  rename 'operators' to 'operations' ([6a7fb9ba](https://github.com/niallpaterson/sigma-calc/commit/6a7fb9bab0ff07c97d388b0b1c4c030ff8658b1c))
+*  move compose to own subdirectory ([2d3219f6](https://github.com/niallpaterson/sigma-calc/commit/2d3219f6b1f8297af997e970cfbdf2ec8d5068bd))
+*  output validator ([18f3741c](https://github.com/niallpaterson/sigma-calc/commit/18f3741cfa1052bb2f7f0f33bf69ee6f9fc40752))
+*  create zero normaliser utility ([045e9a0e](https://github.com/niallpaterson/sigma-calc/commit/045e9a0e599c3ca318e3fc38cfc5a1b55a13242f))
+*  rename 'dom_utilities' to 'dom' ([a31334e6](https://github.com/niallpaterson/sigma-calc/commit/a31334e6ebb9ef29906613df82505a494112b33f))
+*  move parsers to own directory ([17e91cdc](https://github.com/niallpaterson/sigma-calc/commit/17e91cdc54fd787d5e989d628f80db15424eaa08))
+*  move checks to own utility directory ([c95401ec](https://github.com/niallpaterson/sigma-calc/commit/c95401ec5c11052375d28beaedc399895806e754))
+*  solve equation ([a1574788](https://github.com/niallpaterson/sigma-calc/commit/a1574788f65118281de19913435ebc0545a6fb95))
+*  add calculate utility for solveIteration ([065f8481](https://github.com/niallpaterson/sigma-calc/commit/065f84814cfd134459569fdcbc4466e4ea76ed32))
+*  calculate iteration ([9be91256](https://github.com/niallpaterson/sigma-calc/commit/9be9125657e36bc50d4bd0825385a134839be978))
+*  perform operation ([2df3190d](https://github.com/niallpaterson/sigma-calc/commit/2df3190d46596d28acb60b4188b10eb8a9f4857b))
+*  rename 'bodmasArray' ([a9f59b12](https://github.com/niallpaterson/sigma-calc/commit/a9f59b1262f49a163a9ca3ed611d85133c346f17))
+*  replace narrowest operator search ([8074ffa3](https://github.com/niallpaterson/sigma-calc/commit/8074ffa382b13c6dc908d1adabfd5a76689b5941))
+*  split big ops into own modules ([f0adad4b](https://github.com/niallpaterson/sigma-calc/commit/f0adad4b6098621634ef3a291a4d617e04a90faf))
+*  remove unnecessary split utility ([3a5fc5a5](https://github.com/niallpaterson/sigma-calc/commit/3a5fc5a5b20c32fcdf49c3c811114bca5e28bad1))
+*  rename 'units' folder 'utilities' ([104b5fdb](https://github.com/niallpaterson/sigma-calc/commit/104b5fdbab229879af69fac1be3565fe5ff454bd))
+* **calculate:**
+  *  rename, rmv boolean returns ([d7566207](https://github.com/niallpaterson/sigma-calc/commit/d7566207bdc25628fc5d3d52bf622f07e2adf7ee))
+  *  rename 'performCalculation' ([c91b324d](https://github.com/niallpaterson/sigma-calc/commit/c91b324d4c7b8f97a0cb858028b5c4a109e62552))
+* **inputparser:**
+  *  make name concise ([3799c9bc](https://github.com/niallpaterson/sigma-calc/commit/3799c9bc8f23736d5b90d856fb1df048bc8042c5))
+  *  rename => parse_input ([412a38b2](https://github.com/niallpaterson/sigma-calc/commit/412a38b27df79225a93f64ec87e35983866c9c50))
+* **dominteraction:**  rename 'dom_utilities' ([a19342f5](https://github.com/niallpaterson/sigma-calc/commit/a19342f5e34506eedf9cea260f6a82a06ec0154c))
+* **parseinput:**
+  *  move utils to own directory ([7439508b](https://github.com/niallpaterson/sigma-calc/commit/7439508bd999c6cc490ea58c2e882a78b1447d36))
+  *  'utilities' => 'parsers' ([3c70e302](https://github.com/niallpaterson/sigma-calc/commit/3c70e3025cbcc688bafe4f220820585791ea8f3c))
+  *  rmv first index check ([6507111c](https://github.com/niallpaterson/sigma-calc/commit/6507111c28e834e6e02de5ac72c087f962a5c84a))
+  *  use reduce + map ([4f9bbf18](https://github.com/niallpaterson/sigma-calc/commit/4f9bbf182aa40220a0677f64c7304d073487e2ae))
+  *  use compose function ([9d6b1c89](https://github.com/niallpaterson/sigma-calc/commit/9d6b1c8935f02f34161039a9ea3e6c53da0ac856))
+* **parseformula:**  make neg num more concise ([fbc92c92](https://github.com/niallpaterson/sigma-calc/commit/fbc92c92a812b12af5e3adbe175cce8078b78173))
+
+##### Tests
+
+*  update operations tests ([91c5e29b](https://github.com/niallpaterson/sigma-calc/commit/91c5e29b3ce5db3b3922f842f951613e8b75fc7c))
+*  refactor, move tests to own folder ([e8773119](https://github.com/niallpaterson/sigma-calc/commit/e8773119671625e9641711f2ab58f6cd0d8ff33a))
+*  add isValidResult tests ([83a845a5](https://github.com/niallpaterson/sigma-calc/commit/83a845a5a9f839f754420de4b85cbbce6722dbba))
+* **parseinput:**  fix typo in test ([c3bdb3c9](https://github.com/niallpaterson/sigma-calc/commit/c3bdb3c97f6f1f8720d514cc1b3dbbb988e7c857))
+
 ### 1.2.0 (2020-06-26)
 
 ##### Refactors
